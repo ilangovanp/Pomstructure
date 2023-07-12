@@ -16,7 +16,7 @@ public class Testcase_Worktype extends BaseHooks{
 	
 	
 	
-	@Test(retryAnalyzer =Retry.class )
+	@Test
 	public  void workTypeMethod() {
 		
 	 String createdmessage=new WorkTypechain(driver)

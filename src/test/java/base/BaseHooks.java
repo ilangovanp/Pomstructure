@@ -35,7 +35,7 @@ import utils.ReadConfig;
 public class BaseHooks  {
 	
 	public  WebDriver driver;
-
+	public Properties p;
 	ReadConfig config = new ReadConfig();
 	String URL =config.getURL();
 	String username=config.getusername();
@@ -80,11 +80,29 @@ public class BaseHooks  {
 		 
 		        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
 				driver.get(URL);
-				driver.manage().window().maximize();	
-			
-			
+				driver.manage().window().maximize();		
 		   
 	   }
+	   @BeforeTest
+	   @Parameters("pfilename")
+		public void readProperty(String pfilename) {
+		   File f= new File("./src/test/java/object/Repositories/"+pfilename+".properties");
+			FileReader fr;
+			try {
+				
+				fr = new FileReader(f);
+				p = new Properties();
+				p.load(fr);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		}   
+	   
+	   
+	   
+	   
 	   @AfterTest
 		public void teardown() {
 			driver.quit();

@@ -18,19 +18,22 @@ import org.testng.annotations.Test;
 import base.BaseHooks;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import testsuites.Testcase_Worktype;
+import utils.ReadConfig;
 
-public class WorkTypechain{
+public class WorkTypechain extends  BaseHooks{
 	WebDriver driver; 
-	
+
 	public WorkTypechain(WebDriver driver) {
 	
 		this.driver=driver;
-			
+		
 		}
 	
 	
 	public WorkTypechain clicknavigation() {
-		WebElement navigation =driver.findElement(By.xpath("//div[@role='navigation']//button"));
+		
+		//WebElement navigation =driver.findElement(By.xpath("//div[@role='navigation']//button"));
+		WebElement navigation =driver.findElement(By.xpath(p.getProperty("navigation.xpath")));
          navigation.click();
 		return this;
 	}

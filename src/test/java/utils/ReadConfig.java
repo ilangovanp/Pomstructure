@@ -8,7 +8,7 @@ import java.util.Properties;
 public class ReadConfig {
 	
 	
-	Properties p;
+	 public Properties p;
 	
 	public ReadConfig()  {
 		File f= new File("./src/test/resources/resources/config.properties");
