@@ -20,7 +20,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import testsuites.Testcase_Worktype;
 import utils.ReadConfig;
 
-public class WorkTypechain extends  BaseHooks{
+public class WorkTypechain {
 	WebDriver driver; 
 
 	public WorkTypechain(WebDriver driver) {
@@ -32,8 +32,8 @@ public class WorkTypechain extends  BaseHooks{
 	
 	public WorkTypechain clicknavigation() {
 		
-		//WebElement navigation =driver.findElement(By.xpath("//div[@role='navigation']//button"));
-		WebElement navigation =driver.findElement(By.xpath(p.getProperty("navigation.xpath")));
+		WebElement navigation =driver.findElement(By.xpath("//div[@role='navigation']//button"));
+		//WebElement navigation =driver.findElement(By.xpath(p.getProperty("navigation.xpath")));
          navigation.click();
 		return this;
 	}

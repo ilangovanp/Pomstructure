@@ -83,22 +83,7 @@ public class BaseHooks  {
 				driver.manage().window().maximize();		
 		   
 	   }
-	   @BeforeTest
-	   @Parameters("pfilename")
-		public void readProperty(String pfilename) {
-		   File f= new File("./src/test/java/object/Repositories/"+pfilename+".properties");
-			FileReader fr;
-			try {
-				
-				fr = new FileReader(f);
-				p = new Properties();
-				p.load(fr);
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			
-		}   
+	 
 	   
 	   
 	   
