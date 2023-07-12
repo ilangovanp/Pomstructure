@@ -99,7 +99,8 @@ public class BaseHooks  {
 		if(!result.isSuccess()) {
 			TakesScreenshot ts = (TakesScreenshot) driver;
 			File src=ts.getScreenshotAs(OutputType.FILE);
-			File dest= new File("./Screenshot/"+dt.dateCall()+" "+result.getName()+".png");
+			//File dest= new File("./Screenshot/"+dt.dateCall()+" "+result.getName()+".png");
+			File dest= new File("./Screenshot/"+result.getName()+".png");
 		    FileUtils.copyFile(src, dest);
 				
 		}
